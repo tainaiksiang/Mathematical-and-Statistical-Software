@@ -1,0 +1,191 @@
+
+Private Sub btn1Provide_Click()
+
+    Range("L84") = 1500
+
+End Sub
+
+Private Sub btn2Provide_Click()
+    
+    Range("L84") = 3000
+
+End Sub
+
+Private Sub btnDivorced_Click()
+
+    Range("L99") = 4000
+    
+    Range("L101") = 0
+    
+    chkboxSpouseDisabled.Enabled = True
+    
+    chkboxOther1.Enabled = True
+    
+    chkboxOther2.Enabled = True
+    
+End Sub
+
+Private Sub btnMarried_Click()
+
+    Range("L99") = 4000
+    
+    chkboxSpouseDisabled.Enabled = True
+    
+    chkboxOther1.Enabled = True
+    
+    chkboxOther2.Enabled = True
+    
+End Sub
+
+Private Sub btnNoEducation_Click()
+
+    Range("L90") = 0
+
+End Sub
+
+Private Sub btnNoProvide_Click()
+    
+    Range("L84") = 0
+    
+End Sub
+
+Private Sub btnSingle_Click()
+    
+    Range("L78") = 9000
+    
+    Range("L99") = 0
+    
+    Range("L101") = 0
+    
+    'Range("L19, L21, L26, L28") = 0
+    
+    chkboxSpouseDisabled.Enabled = False
+    chkboxSpouseDisabled.Value = False
+    
+    'chkboxOther1.Enabled = False
+    'chkboxOther1.Value = False
+    
+    'chkboxOther2.Enabled = False
+    'chkboxOther2.Value = False
+    
+    'Range("L39, L41") = 0
+        
+End Sub
+
+Private Sub btnYesEducation_Click()
+
+   Range("L90") = 7000
+
+End Sub
+
+Private Sub chkboxMedical1_Click()
+
+    If chkboxMedical1.Value = True Or chkboxMedical3.Value = True Then Range("L92") = 6000 Else Range("L92") = 0
+
+End Sub
+
+Private Sub chkboxMedical2_Click()
+    
+    Dim HP_value As String
+      
+    If btnNoProvide.Value = True Then
+        HP_value = 0
+    ElseIf btn1Provide.Value = True Then
+        HP_value = 1500
+    ElseIf btn2Provide.Value = True Then
+        HP_value = 3000
+    End If
+      
+    If chkboxMedical2.Value = True Then
+        Range("L84") = 5000
+        btnNoProvide.Enabled = False
+        btn1Provide.Enabled = False
+        btn2Provide.Enabled = False
+    Else
+        Range("L84") = HP_value
+        btnNoProvide.Enabled = True
+        btn1Provide.Enabled = True
+        btn2Provide.Enabled = True
+    End If
+    
+End Sub
+
+Private Sub chkboxMedical3_Click()
+
+    If chkboxMedical3.Value = True Or chkboxMedical1.Value = True Then Range("L92") = 6000 Else Range("L92") = 0
+
+End Sub
+
+Private Sub chkboxMT3Children_Click()
+
+    If chkboxMT3Children.Value = True Then Range("L103, L104") = 2000 * Range("L20") Else Range("L103, L104") = 0
+
+End Sub
+
+Private Sub chkboxOther1_Click()
+
+    If chkboxOther1.Value = True Then Range("L109") = 1000 Else Range("L109") = 0
+
+End Sub
+
+Private Sub chkboxOther2_Click()
+
+    If chkboxOther2.Value = True Then Range("L111") = 2000 Else Range("L111") = 0
+
+End Sub
+
+Private Sub chkboxOther3_Click()
+
+    If chkboxOther3.Value = True Then Range("L94") = 2500 Else Range("L94") = 0
+
+End Sub
+
+Private Sub chkboxOther4_Click()
+
+    If chkboxOther4.Value = True Then Range("L95") = 2500 Else Range("L95") = 0
+
+End Sub
+
+Private Sub chkboxOther5_Click()
+
+    If chkboxOther5.Value = True Then Range("L122") = 1000 Else Range("L122") = 0
+
+End Sub
+
+Private Sub chkboxSelfDisabled_Click()
+
+    If chkboxSelfDisabled.Value = True Then Range("L80") = 6000 Else Range("L80") = 0
+    
+End Sub
+
+Private Sub chkboxSpouseDisabled_Click()
+
+    If chkboxSpouseDisabled.Value = True Then Range("L101") = 3500 Else Range("L101") = 0
+
+End Sub
+
+Private Sub ResetButton_Click()
+
+    Range("Ll4, L19, L21, L26, L28, L39, L41, L46, L48, L50, L90") = 0
+    btnSingle.Value = False
+    btnMarried.Value = False
+    btnDivorced.Value = False
+    btnNoProvide.Value = False
+    btn1Provide.Value = False
+    btn2Provide.Value = False
+    btnYesEducation.Value = False
+    btnNoEducation.Value = False
+    chkboxSelfDisabled.Value = False
+    chkboxSpouseDisabled.Value = False
+    chkboxMedical1.Value = False
+    chkboxMedical2.Value = False
+    chkboxMedical3.Value = False
+    chkboxOther1.Value = False
+    chkboxOther2.Value = False
+    chkboxOther3.Value = False
+    chkboxOther4.Value = False
+    chkboxOther5.Value = False
+    
+    'Range("L78, L80, L84, L88, L90, L92, L94, L95, L97, L99, L101, L103, L104, L105, L106, L107, L109, L111, L113, L114, L116, L118, L120, L122") = 0
+    
+End Sub
